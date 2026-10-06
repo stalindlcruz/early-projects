@@ -1,0 +1,150 @@
+---
+import MyDisneyLogoComponent from "./MyDisneyLogoComponent.astro";
+---
+
+--- --- --- --- --- ---
+<style>
+  .login-form {
+    background: #fff;
+    border-radius: 20px;
+    padding: 50px 40px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: auto;
+  }
+
+  .login-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #1a1a1a;
+  }
+
+  .login-subtitle {
+    font-size: 1.1rem;
+    text-align: left;
+    color: #666;
+    margin-bottom: 30px;
+  }
+
+  .form-control {
+    padding: 16px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 1px solid #ccc;
+  }
+
+  .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+  }
+
+  .btn-continue {
+    width: 100%;
+    padding: 16px;
+    background-color: #ec1d24;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .btn-continue:hover {
+    background-color: #d11b1e;
+  }
+
+  .disney-footer {
+    font-size: 0.9rem;
+    color: #666;
+    text-align: center;
+    margin-top: 40px;
+  }
+
+  .disney-footer a {
+    color: #007bff;
+    text-decoration: none;
+  }
+
+  .disney-footer a:hover {
+    text-decoration: underline;
+  }
+
+  .partners-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .partners-logos img {
+    height: 30px;
+  }
+
+  .hr {
+    border: 1 solid #5f6166;
+    position: relative;
+    top: 10px;
+  }
+</style>
+
+<div class="container my-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
+      <div class="login-form">
+        <div class="text-center">
+          <MyDisneyLogoComponent />
+        </div>
+
+        <h1 class="login-title">Enter your email to continue</h1>
+        <p class="login-subtitle">
+          Log in to Marvel with your MyDisney account. If you don't have one,
+          you will be prompted to create one.
+        </p>
+
+        <form>
+          <input
+            type="email"
+            placeholder="Email"
+            class="form-control"
+            required
+          />
+          <button type="submit" class="btn-continue">Continue</button>
+        </form>
+
+        <hr class="hr" />
+
+        <div class="disney-footer">
+          <p>
+            <strong
+              >Marvel is part of The Walt Disney Family of Companies.</strong
+            >
+          </p>
+          <p>
+            MyDisney lets you seamlessly log in to services and experiences
+            across The Walt Disney Family of Companies, such as Disney+, ESPN,
+            Walt Disney World,
+            <a href="#">and more.</a>
+          </p>
+
+          <div class="partners-logos">
+            <img src="/disney-logo.svg" alt="Disney" />
+            <img src="/abc-logo.svg" alt="ABC" />
+            <img src="/espn-logo.svg" alt="ESPN" />
+            <img src="/marvel-logo.svg" alt="Marvel" />
+            <img src="/starwars-logo.svg" alt="Star Wars" />
+            <img src="/hulu-logo.svg" alt="Hulu" />
+            <img src="/nationalgeographic-logo.svg" alt="National Geographic" />
+            <img src="/star-logo.svg" alt="Star" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
