@@ -1,0 +1,88 @@
+---
+
+---
+
+<style>
+  .subnav {
+    background-color: #232f3e;
+  }
+
+  .subnav-scroll {
+    overflow-x: auto;
+    white-space: nowrap;
+    flex-grow: 1;
+  }
+
+  .subnav-list {
+    display: inline-flex;
+    gap: 1rem;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  .subnav-list li {
+    display: inline-block;
+    white-space: nowrap;
+  }
+
+  .subnav .nav-link {
+    display: inline-block;
+    color: white;
+    font-size: 0.875rem;
+    text-decoration: none;
+    padding: 0 0.25rem;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .subnav .nav-link:hover {
+    outline: 1px solid #fff;
+    transform: none;
+  }
+
+  .menu-all {
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .menu-all:hover {
+    outline: 1px solid #ffffff;
+    border-radius: 1px;
+  }
+</style>
+
+<nav class="subnav">
+  <div class="container-fluid">
+    <div class="d-flex align-items-center py-2">
+      <!-- Menú "All" -->
+      <div class="d-flex align-items-center menu-all me-3 flex-shrink-0">
+        <i class="bi bi-list text-white fs-5 me-1"></i>
+        <span class="text-white fw-semibold">All</span>
+      </div>
+
+      <!-- Lista scrollable -->
+      <div
+        class="subnav-scroll d-flex justify-content-center align-items-center"
+      >
+        <ul class="subnav-list list-unstyled mb-0">
+          <li><a href="#" class="nav-link">Amazon Haul</a></li>
+          <li><a href="#" class="nav-link">Medical Care</a></li>
+          <li><a href="#" class="nav-link">Saks</a></li>
+          <li><a href="#" class="nav-link">Best Sellers</a></li>
+          <li><a href="#" class="nav-link">Amazon Basics</a></li>
+          <li><a href="#" class="nav-link">New Releases</a></li>
+          <li><a href="#" class="nav-link">Music</a></li>
+          <li><a href="#" class="nav-link">Registry</a></li>
+          <li><a href="#" class="nav-link">Today's Deals</a></li>
+          <li><a href="#" class="nav-link">Smart Home</a></li>
+          <li><a href="#" class="nav-link">Gift Cards</a></li>
+          <li><a href="#" class="nav-link">Groceries</a></li>
+          <li><a href="#" class="nav-link">Prime</a></li>
+          <li><a href="#" class="nav-link">Customer Service</a></li>
+          <li><a href="#" class="nav-link">Pharmacy</a></li>
+          <li><a href="#" class="nav-link">Books</a></li>
+          <li><a href="#" class="nav-link">Amazon Home</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

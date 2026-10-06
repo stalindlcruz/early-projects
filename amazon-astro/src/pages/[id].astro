@@ -1,0 +1,215 @@
+---
+import type { GetStaticPaths } from "astro";
+// import * as all from "../assets/db.json"; // No se necesita porque recorrimos cada product con .map() para obtener el id y devolver el array de objetos.
+import type { Product } from "../interfaces/IProducts";
+import MainLoyout from "../layouts/MainLoyout.astro";
+
+import { getProducts } from "../utils/getProducts";
+
+import products from "../assets/products.json";
+
+export const getStaticPaths = (async () => {
+  // const products: Product[] = await getProducts();
+
+  // const result = await fetch("https://fakestoreapi.com/products");
+  // const products: Product[] = await result.json();
+
+  //   return [
+  //     {
+  //       params: { id: "1" },
+  //     },
+  //   ];
+
+  // return all.data;
+
+  return products.map((product) => {
+    return {
+      params: { id: product.id.toString() },
+      props: { product },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { id } = Astro.params;
+const { product } = Astro.props;
+---
+
+<style>
+  .product-container {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  .imageProduct {
+    width: 100%;
+    max-width: 300px;
+    object-fit: contain;
+  }
+
+  .div-tittle {
+    /* background-color: aliceblue; */
+    display: grid;
+    justify-content: center;
+  }
+
+  .product-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .div-raiting {
+    margin-top: -5px;
+    /* background-color: aliceblue; */
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .rating {
+    display: inline-block;
+    margin: 0;
+    color: #232f3e;
+    font-weight: bold;
+    /* line-height: 1; */
+    /* margin-right: 10px;
+    margin-bottom: 10px; */
+  }
+
+  .stars {
+    /* background-color: #466994; */
+    margin-left: 10px;
+    color: #ffa41c;
+  }
+
+  .a-rating {
+    color: #466994;
+    margin-left: 10px;
+    text-decoration: none;
+  }
+
+  .a-rating:hover {
+    text-decoration: underline;
+  }
+
+  .product-description {
+    /* text-align: center; */
+    background-color: #637e9e1a;
+    border-radius: 20px;
+    padding: 10px;
+    /* font-size: 15px; */
+    margin-top: 10px;
+  }
+
+  .about {
+    margin-bottom: 0;
+  }
+
+  .category {
+    color: #466994;
+    font-weight: 500;
+    margin-bottom: 2px;
+  }
+
+  .description {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-align: left;
+    margin-top: 10px;
+  }
+
+  .div-price {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .div-btns {
+    /* background-color: aliceblue; */
+    text-align: center;
+    padding: 10px;
+  }
+
+  .btn-cart,
+  .btn-buy {
+    width: 70%;
+    margin-top: 10px;
+    padding: 10px;
+    font-weight: 600;
+    border-radius: 20px;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-buy {
+    background-color: #ffa41c;
+    color: #000;
+  }
+
+  .btn-buy:hover {
+    background-color: #e69500;
+  }
+
+  .btn-cart {
+    background-color: #f0c14b;
+    color: #000;
+  }
+
+  .btn-cart:hover {
+    background-color: #ddb347;
+  }
+</style>
+
+<MainLoyout tittle={"Hola"}>
+  <section class="container py-5">
+    <div class="row product-container">
+      <div class="col-md-4 text-center">
+        <img
+          transition:name={product.image}
+          transition:animate="slide"
+          class="imageProduct"
+          src={product.image}
+          alt={product.title}
+        />
+      </div>
+
+      <div class="col-md-8">
+        <div class="div-tittle">
+          <h1 class="product-title">{product.title}</h1>
+          <div class="div-raiting">
+            <p class="rating">{product.rating.rate}</p>
+
+            <div class="stars">
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-fill"></i>
+              <i class="bi bi-star-half"></i>
+              <i class="bi bi-star"></i>
+            </div>
+
+            <a href="#" class="a-rating">{product.rating.count} rating</a>
+          </div>
+        </div>
+
+        <div class="product-description">
+          <h4 class="about">About this item</h4>
+          <p class="category">{product.category}</p>
+          <p class="description">{product.description}</p>
+        </div>
+
+        <div class="div-price">
+          <h4 class="price">${product.price}</h4>
+        </div>
+
+        <div class="div-btns">
+          <button class="btn-cart">Add to Cart</button>
+          <button class="btn-buy">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+</MainLoyout>
+
+<script></script>
