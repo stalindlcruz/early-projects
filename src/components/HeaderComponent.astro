@@ -1,0 +1,92 @@
+---
+import ListComponent from "./ListComponent.astro";
+import LoginComponent from "./LoginComponent.astro";
+import LogoComponent from "./LogoComponent.astro";
+import SubscribeComponent from "./SubscribeComponent.astro";
+import SearchComponent from "./SearchComponent.astro";
+---
+
+<style>
+  header {
+    background-color: #202020;
+    /* background-color: cadetblue; */
+    height: 52px;
+    border-bottom: 1px solid #393939;
+  }
+
+  .header-container {
+    height: 52px;
+    display: grid;
+    align-items: center;
+    /* background-color: bisque; */
+    border-right: 1px solid #393939;
+    border-left: 1px solid #393939;
+  }
+
+  .col-login {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    border-right: 1px solid #393939;
+    cursor: pointer;
+    gap: 10px;
+  }
+
+  span {
+    color: #fff;
+  }
+
+  .header-col-logo-marvel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+  }
+
+  .header-col-subcribe {
+    /* background-color: aqua; */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 52px;
+    border-left: 1px solid #393939;
+  }
+
+  .header-container-md {
+  }
+</style>
+
+<header>
+  <div class="container header-container d-none d-lg-block">
+    <div class="row header-row">
+      <div class="col-lg-3 col-login">
+        <LoginComponent>
+          <span class="d-none d-lg-block">|</span>
+        </LoginComponent>
+      </div>
+
+      <div class="col-lg-6 header-col-logo-marvel">
+        <LogoComponent />
+      </div>
+
+      <div class="col-lg-3 header-col-subcribe">
+        <SubscribeComponent />
+      </div>
+    </div>
+  </div>
+
+  <div class="container header-container-md d-block d-lg-none">
+    <div class="row">
+      <div class="col-2">
+        <ListComponent />
+      </div>
+      <div class="col-8 d-flex justify-content-center">
+        <LogoComponent />
+      </div>
+      <div class="col-2">
+        <SearchComponent />
+      </div>
+    </div>
+  </div>
+</header>

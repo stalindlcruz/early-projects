@@ -1,0 +1,23 @@
+---
+interface Props {
+  link?: string;
+}
+
+const { link } = Astro.props;
+---
+
+<style>
+  .nav-li a {
+    color: #9c9c9c;
+    text-decoration: none;
+    font-weight: 700;
+  }
+
+  .nav-li a:hover {
+    color: #fff;
+  }
+</style>
+
+<li class="nav-li selectd">
+  <a href={link}> <slot /> </a>
+</li>
