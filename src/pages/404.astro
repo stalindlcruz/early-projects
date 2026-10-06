@@ -1,0 +1,38 @@
+---
+import MainLoyout from "../layouts/MainLoyout.astro";
+---
+
+<style>
+  a {
+    color: #232f3e;
+    font-size: 30px;
+  }
+
+  a:hover {
+    color: #fabc66;
+    text-decoration: none;
+  }
+</style>
+
+<MainLoyout tittle="404 Not Found">
+  <div
+    class="container vh-100 d-flex justify-content-center align-items-center"
+  >
+    <div class="text-center">
+      <img
+        src="/public/assets/404-monkey.png"
+        alt="404 Not Found"
+        class="img-fluid mb-4"
+        style="max-width: 300px;"
+      />
+      <h1 class="display-4">This page isn't available.</h1>
+      <p class="lead text-muted">
+        Sorry about that.<br />
+        Try searching for something else.
+      </p>
+      <div class="d-flex justify-content-center mt-3">
+        <a href="/">Go to Home Page</a>
+      </div>
+    </div>
+  </div>
+</MainLoyout>

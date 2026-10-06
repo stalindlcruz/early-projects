@@ -1,0 +1,19 @@
+---
+import MainLoyout from "../layouts/MainLoyout.astro";
+import ProductsComponent from "../components/ProductsComponent.astro";
+import type { Product } from "../interfaces/IProducts";
+import products from "../assets/products.json";
+
+import { getProducts } from "../utils/getProducts";
+// const products: Product[] = await getProducts();
+
+// const result = await fetch("https://fakestoreapi.com/products");
+// const products: Product[] = await result.json();
+---
+
+<MainLoyout tittle="Amazon.com">
+  <h2 class="h2-products">Amazon Fashion</h2>
+  <ProductsComponent products={products} />
+</MainLoyout>
+
+<script></script>

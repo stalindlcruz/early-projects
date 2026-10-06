@@ -1,0 +1,14 @@
+body {
+    display: grid;
+    min-height: 100dvh;
+    grid-template-rows: auto auto 1fr auto;
+}
+
+.h2-products {
+    display: flex;
+    justify-content: center;
+    color: #232f3e;
+    text-decoration: underline;
+    background-color: #535b642c;
+    border-radius: 20px;
+}

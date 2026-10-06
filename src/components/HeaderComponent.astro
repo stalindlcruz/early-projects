@@ -1,0 +1,220 @@
+---
+
+---
+
+<style>
+  .header {
+    background-color: #131921;
+    height: auto;
+    font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+      sans-serif;
+  }
+
+  .amazon-logo {
+    width: 100px;
+  }
+
+  .form-select {
+    max-width: 100px;
+  }
+
+  .div-logo {
+    /* box-sizing: border-box; */
+  }
+
+  .amazon-logo:hover {
+    cursor: pointer;
+    outline: 1px solid white;
+    transform: none;
+  }
+
+  .div-location {
+    /* margin-bottom: 0px;
+    padding-bottom: 0; */
+  }
+
+  .div-location:hover {
+    cursor: pointer;
+    outline: 1px solid white;
+    transform: none;
+  }
+
+  .a-location {
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    /* margin-top: 0; */
+  }
+
+  .small-location {
+    color: #c1c1c1;
+    font-size: 14px;
+    margin-left: 25px;
+    /* margin-bottom: 0; */
+    position: relative;
+    top: 7px;
+  }
+
+  .select-search {
+    cursor: pointer;
+    background-color: #dddcdc;
+    border: none;
+  }
+
+  .select-search:hover {
+    background-color: #b8b8b8;
+    border: none;
+  }
+
+  .btnSearch {
+    background-color: #fabc66;
+    border: none;
+    width: auto;
+  }
+
+  .btnSearch:hover {
+    background-color: #d59f53;
+  }
+
+  .bi-search {
+    font-size: 20px;
+  }
+
+  .flag-usa {
+    width: 30px;
+  }
+
+  .select-lang {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    outline: none;
+  }
+
+  .div-lang:hover,
+  .div-account:hover,
+  .div-return:hover,
+  .div-cart:hover {
+    cursor: pointer;
+    outline: 1px solid #fff;
+    transform: none;
+  }
+
+  .account-a,
+  .a-return {
+    font-size: 20px;
+    text-decoration: none;
+    display: grid;
+  }
+
+  .account-small,
+  .small-return {
+    font-size: 15px;
+    position: relative;
+    top: 5px;
+  }
+
+  .bi-cart-check {
+    font-size: 40px;
+  }
+
+  .txt-cart {
+    color: #fff;
+    font-size: larger;
+  }
+
+  .a-cart {
+    text-decoration: none;
+  }
+</style>
+
+<header class="header">
+  <!-- <iframe
+    transition:persist="media-player"
+    transition:name={"product.image"}
+    width="100%"
+    height="315"
+    src="https://www.youtube.com/embed/zzjDq28XT9k?si=TlzLMk5t4OEnyHRl"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    referrerpolicy="strict-origin-when-cross-origin"
+    allowfullscreen></iframe> -->
+
+  <!-- <video
+    autoplay
+    src="https://www.youtube.com/embed/zzjDq28XT9k?si=TlzLMk5t4OEnyHRl"></video> -->
+
+  <div class="container-fluid div-container">
+    <div class="row align-items-center">
+      <div class="col-auto">
+        <div>
+          <img
+            src="/assets/amazon-logo.png"
+            alt="Amazon Logo"
+            class="amazon-logo"
+          />
+        </div>
+      </div>
+
+      <div
+        class="col-auto d-none d-md-flex align-items-start flex-column div-location"
+      >
+        <small class="small-location"> Delivering to Nashua 03060 </small>
+        <a href="#" class="text-light small a-location">
+          <i class="bi bi-geo-alt-fill me-1 text-white"></i>Update location</a
+        >
+      </div>
+
+      <div class="col">
+        <div class="input-group">
+          <select class="form-select w-auto select-search">
+            <option>All</option>
+            <option>Electronics</option>
+            <option>Books</option>
+            <option>Baby</option>
+          </select>
+          <input type="text" class="form-control" placeholder="Search Amazon" />
+          <button class="btnSearch">
+            <i class="bi bi-search"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="col-auto d-none d-lg-block div-lang">
+        <img
+          class="flag-usa"
+          src="/public/assets/flag-usa.png"
+          alt="flag usa"
+        />
+        <select class="select-lang">
+          <option value="EN">EN</option>
+          <option value="ES">ES</option>
+        </select>
+        <span class="text-white small"></span>
+      </div>
+
+      <div class="col-auto d-none d-lg-block div-account">
+        <a href="#" class="text-light account-a">
+          <small class="account-small">Hello, sign in</small>
+          <small>Account & Lists</small>
+        </a>
+      </div>
+
+      <div class="col-auto d-none d-lg-block div-return">
+        <a href="#" class="a-return text-light">
+          <small class="small-return">Returns</small>
+          <small>& Orders</small>
+        </a>
+      </div>
+
+      <div class="col-auto div-cart">
+        <a href="#" class="text-white position-relative a-cart">
+          <i class="bi bi-cart-check"></i>
+          <span class="txt-cart">Cart</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</header>
